@@ -284,6 +284,55 @@
   }
   .press-item:hover img{ opacity:0.9; }
 
+  /* ---------- APPLY FORM ---------- */
+  .apply-form{
+    margin-top:8px;
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+    max-width:540px;
+  }
+  .field{ display:flex; flex-direction:column; gap:10px; }
+  .field label{
+    font-family:'Inter', sans-serif;
+    font-size:13px;
+    font-weight:500;
+    color:var(--ink);
+  }
+  .field input,
+  .field select,
+  .field textarea{
+    background:var(--bg-2);
+    border:1px solid var(--line);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    font-size:14.5px;
+    font-weight:300;
+    padding:13px 16px;
+    outline:none;
+    transition:border-color 0.3s ease, background 0.3s ease;
+    resize:vertical;
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus{
+    border-color:var(--accent);
+    background:#17181b;
+  }
+  .field select{
+    appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%238f8c86' stroke-width='1.4' fill='none'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 16px center;
+  }
+  .field select option{ background:var(--bg-2); color:var(--ink); }
+  .field input::placeholder,
+  .field textarea::placeholder{ color:var(--ink-dim); opacity:0.6; }
+  .apply-form button.btn{
+    align-self:flex-start;
+    border:none;
+  }
+
   /* ---------- CTA ---------- */
   .cta-section{ text-align:left; padding:130px 0 160px; }
   .cta-section h2{ max-width:15ch; }
@@ -469,9 +518,88 @@
   <div class="eyebrow reveal" style="margin-bottom:24px;">Letzter Schritt</div>
   <h2 class="reveal">Die Plätze sind begrenzt. Der Ort bleibt geheim.</h2>
   <p class="reveal">Bis du eingeladen wirst.</p>
-  <a href="#" class="btn reveal">Jetzt bewerben
+  <a href="#bewerbung" class="btn reveal">Jetzt bewerben
     <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h11M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
   </a>
+</section>
+
+<section id="bewerbung">
+  <div class="eyebrow reveal" style="margin-bottom:24px;">Bewerbung</div>
+  <h2 class="reveal">Erzähl uns, wer du bist.</h2>
+  <p class="reveal" style="margin-bottom:36px;">Kurz und ehrlich – das reicht für die Vorauswahl.</p>
+
+  <form class="apply-form" action="https://formspree.io/f/maqgzwvq" method="POST">
+    <div class="field">
+      <label for="f-name">Vor- und Nachname</label>
+      <input type="text" id="f-name" name="Name" required>
+    </div>
+
+    <div class="field">
+      <label for="f-email">Business-E-Mail</label>
+      <input type="email" id="f-email" name="E-Mail" required>
+    </div>
+
+    <div class="field">
+      <label for="f-linkedin">LinkedIn-Profil (URL)</label>
+      <input type="url" id="f-linkedin" name="LinkedIn" placeholder="https://linkedin.com/in/..." required>
+    </div>
+
+    <div class="field">
+      <label for="f-legalform">Rechtsform des operativen Geschäfts</label>
+      <select id="f-legalform" name="Rechtsform" required>
+        <option value="" disabled selected>Bitte wählen</option>
+        <option>GmbH</option>
+        <option>Holding-Struktur</option>
+        <option>Einzelunternehmen</option>
+        <option>Sonstige</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="f-revenue">Jahresumsatz des Unternehmens</label>
+      <select id="f-revenue" name="Jahresumsatz" required>
+        <option value="" disabled selected>Bitte wählen</option>
+        <option>unter 2,5 Mio. €</option>
+        <option>2,5 bis 5 Mio. €</option>
+        <option>über 5 Mio. €</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="f-cryptostructure">Struktur deiner Krypto-Assets</label>
+      <select id="f-cryptostructure" name="Krypto-Struktur" required>
+        <option value="" disabled selected>Bitte wählen</option>
+        <option>Privatvermögen (Cold Storage)</option>
+        <option>Im Betriebsvermögen (GmbH)</option>
+        <option>Krypto-Holding</option>
+        <option>Noch keine Krypto-Assets</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="f-liquidity">Liquiditäts-Volumen in Digital Assets</label>
+      <select id="f-liquidity" name="Liquiditätsvolumen" required>
+        <option value="" disabled selected>Bitte wählen</option>
+        <option>unter 100.000 €</option>
+        <option>100.000 € bis 500.000 €</option>
+        <option>über 500.000 €</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="f-address">Diskrete Versandadresse</label>
+      <textarea id="f-address" name="Versandadresse" rows="3" placeholder="Straße, PLZ, Ort, Land" required></textarea>
+    </div>
+
+    <div class="field">
+      <label for="f-value">Welchen Wert kannst du aktiv in diesen Kreis einbringen?</label>
+      <textarea id="f-value" name="Mehrwert" rows="4" required></textarea>
+    </div>
+
+    <button type="submit" class="btn" style="margin-top:8px;">Bewerbung absenden
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h11M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
+    </button>
+  </form>
 </section>
 
 </div>
