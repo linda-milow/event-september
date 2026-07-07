@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bewerbung – Handverlesen</title>
+<title>09-2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -106,20 +106,6 @@
     color:var(--ink-dim);
     font-size:16px;
     max-width:40ch;
-  }
-  .hero-num{
-    position:absolute;
-    top:50%; right:-40px;
-    transform:translateY(-50%);
-    font-family:'Syne', sans-serif;
-    font-weight:800;
-    font-size:min(38vw, 320px);
-    color:transparent;
-    -webkit-text-stroke:1px var(--line);
-    z-index:1;
-    user-select:none;
-    pointer-events:none;
-    line-height:1;
   }
   .scroll-hint{
     margin-top:80px;
@@ -262,6 +248,42 @@
   .host .socials a:hover{ color:var(--accent); }
   .host .socials svg{ width:18px; height:18px; }
 
+  /* ---------- PRESS LOGOS ---------- */
+  .press{ padding:56px 0; border-top:1px solid var(--line); }
+  .press-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--ink-dim);
+    margin-bottom:32px;
+  }
+  .press-row{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:14px;
+  }
+  .press-item{
+    background:rgba(241,238,230,0.05);
+    border:1px solid var(--line);
+    padding:16px 22px;
+    display:flex;
+    align-items:center;
+    transition:background 0.35s ease;
+  }
+  .press-item:hover{ background:rgba(241,238,230,0.09); }
+  .press-item img{
+    height:26px;
+    width:auto;
+    max-width:120px;
+    object-fit:contain;
+    filter:grayscale(1) brightness(0) invert(1);
+    opacity:0.5;
+    transition:opacity 0.35s ease;
+  }
+  .press-item:hover img{ opacity:0.9; }
+
   /* ---------- CTA ---------- */
   .cta-section{ text-align:left; padding:130px 0 160px; }
   .cta-section h2{ max-width:15ch; }
@@ -315,7 +337,6 @@
 
   @media (max-width: 720px){
     .grid, .steps, .hosts{ grid-template-columns:1fr; }
-    .hero-num{ display:none; }
   }
   @media (max-width: 480px){
     .hero{ padding:110px 20px 72px; }
@@ -329,7 +350,6 @@
 
 <section class="hero">
   <img class="seal-watermark" src="wax-seal.png" alt="" aria-hidden="true">
-  <div class="hero-num" id="parallax-num">01</div>
   <div class="hero-inner">
     <div class="eyebrow reveal in">Bewerbung erforderlich</div>
     <h1 class="reveal in">Ein Wochenende.<br>Ein Kreis. <span class="accent">Eine Adresse,</span><br>die du erst erfährst,<br>wenn du ausgewählt wurdest.</h1>
@@ -418,6 +438,17 @@
   </div>
 </section>
 
+<section class="press">
+  <div class="press-label reveal">Bekannt aus den Medien</div>
+  <div class="press-row">
+    <div class="press-item reveal"><img src="logo-republica.png" alt="re:publica"></div>
+    <div class="press-item reveal"><img src="logo-invest.png" alt="INVEST"></div>
+    <div class="press-item reveal"><img src="logo-mgo.png" alt="Mediengruppe Oberfranken"></div>
+    <div class="press-item reveal"><img src="logo-aledius.png" alt="Aledius"></div>
+    <div class="press-item reveal"><img src="logo-bitsandpretzels.png" alt="Bits & Pretzels"></div>
+  </div>
+</section>
+
 <section>
   <div class="eyebrow reveal" style="margin-bottom:24px;">Privatsphäre als Prinzip</div>
   <h2 class="reveal">Privatsphäre als Basis für einen offenen Austausch.</h2>
@@ -462,13 +493,6 @@
     requestAnimationFrame(animateBlob);
   }
   animateBlob();
-
-  // parallax on hero number
-  const parallaxNum = document.getElementById('parallax-num');
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    parallaxNum.style.transform = `translateY(calc(-50% + ${y * 0.25}px))`;
-  }, { passive:true });
 
   // scroll reveal
   requestAnimationFrame(() => {
