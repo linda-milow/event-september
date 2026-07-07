@@ -206,6 +206,55 @@
   }
   .step p{ font-size:13.5px; max-width:none; }
 
+  /* ---------- HOSTS ---------- */
+  .hosts{
+    margin-top:48px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .host{
+    background:var(--bg);
+    padding:34px 30px 30px;
+    transition:background 0.4s ease;
+  }
+  .host:hover{ background:var(--bg-2); }
+  .host img{
+    width:84px; height:84px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:top center;
+    filter:grayscale(0.4);
+    transition:filter 0.4s ease;
+  }
+  .host:hover img{ filter:grayscale(0); }
+  .host h3{
+    font-family:'Syne', sans-serif;
+    font-weight:600;
+    font-size:17px;
+    color:var(--ink);
+    margin-top:20px;
+  }
+  .host .role{
+    font-size:13px;
+    color:var(--ink-dim);
+    margin-top:4px;
+  }
+  .host .socials{
+    margin-top:18px;
+    display:flex;
+    gap:14px;
+  }
+  .host .socials a{
+    color:var(--ink-dim);
+    transition:color 0.3s ease;
+    display:flex;
+  }
+  .host .socials a:hover{ color:var(--accent); }
+  .host .socials svg{ width:18px; height:18px; }
+
   /* ---------- CTA ---------- */
   .cta-section{ text-align:left; padding:130px 0 160px; }
   .cta-section h2{ max-width:15ch; }
@@ -258,7 +307,7 @@
   }
 
   @media (max-width: 720px){
-    .grid, .steps{ grid-template-columns:1fr; }
+    .grid, .steps, .hosts{ grid-template-columns:1fr; }
     .hero-num{ display:none; }
   }
   @media (max-width: 480px){
@@ -272,14 +321,13 @@
 <div id="blob"></div>
 
 <section class="hero">
-  <img class="seal-watermark" src="assets/wax-seal.png" alt="" aria-hidden="true">
+  <img class="seal-watermark" src="wax-seal.png" alt="" aria-hidden="true">
   <div class="hero-num" id="parallax-num">01</div>
   <div class="hero-inner">
     <div class="eyebrow reveal in">Bewerbung erforderlich</div>
     <h1 class="reveal in">Ein Wochenende.<br>Ein Kreis. <span class="accent">Eine Adresse,</span><br>die du erst erfährst,<br>wenn du ausgewählt wurdest.</h1>
     <p class="sub reveal in">Kein Programm im Vorfeld. Kein Ort im Vorfeld. Nur ein Kreis von Menschen, die bereits verstanden haben, worum es geht.</p>
-    <img class="seal-hero" id="hero-seal" src="assets/wax-seal.png" alt="Siegel">
-    <div class="scroll-hint reveal in">Scrollen</div>
+    <img class="seal-hero" id="hero-seal" src="wax-seal.png" alt="Siegel">
   </div>
 </section>
 
@@ -327,6 +375,39 @@
   </div>
 </section>
 
+<section>
+  <div class="eyebrow reveal" style="margin-bottom:24px;">Wer euch empfängt</div>
+  <h2 class="reveal">Deine Gastgeber.</h2>
+  <div class="hosts">
+    <div class="host reveal">
+      <img src="tami.png" alt="Tami Mönnig">
+      <h3>Tami Mönnig</h3>
+      <div class="role">Inhaberin TaXMON Consulting</div>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/tami-moennig/?locale=en" target="_blank" rel="noopener" aria-label="Tami auf LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12.02H3V8.98zm7 0h3.83v1.64h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.78 2.66 4.78 6.11v6.33h-4v-5.61c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.71h-4V8.98z"/></svg>
+        </a>
+        <a href="https://reuter.company/events" target="_blank" rel="noopener" aria-label="Tami Website">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="host reveal">
+      <img src="daniel.png" alt="Daniel Reuter">
+      <h3>Daniel Reuter</h3>
+      <div class="role">Inhaber reuter.company</div>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/daniel-joseph-bryant-reuter-76887a174/" target="_blank" rel="noopener" aria-label="Daniel auf LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12.02H3V8.98zm7 0h3.83v1.64h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.78 2.66 4.78 6.11v6.33h-4v-5.61c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.71h-4V8.98z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/real.danielreuter/" target="_blank" rel="noopener" aria-label="Daniel auf Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-section">
   <div class="eyebrow reveal" style="margin-bottom:24px;">Letzter Schritt</div>
   <h2 class="reveal">Die Plätze sind begrenzt. Der Ort bleibt geheim.</h2>
@@ -337,8 +418,6 @@
 </section>
 
 </div>
-
-<footer>ENTWURF — PLATZHALTER-INHALTE, VOR VERÖFFENTLICHUNG PRÜFEN</footer>
 
 <script>
   // interactive cursor blob with lerp smoothing
