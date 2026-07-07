@@ -46,6 +46,29 @@
   }
   #blob.on{ opacity:1; }
 
+  /* watermark seal, faint, repeated behind content */
+  .seal-watermark{
+    position:absolute;
+    top:40%; left:50%;
+    width:900px; max-width:140vw;
+    transform:translate(-50%,-50%);
+    opacity:0.05;
+    filter:grayscale(1) contrast(1.4);
+    pointer-events:none;
+    z-index:0;
+    mix-blend-mode:luminosity;
+  }
+
+  .seal-hero{
+    width:110px;
+    margin-top:44px;
+    filter:drop-shadow(0 18px 30px rgba(0,0,0,0.5));
+    opacity:0;
+    transform:scale(0.7) rotate(-18deg);
+    transition:opacity 0.8s cubic-bezier(.16,1,.3,1) 0.3s, transform 0.9s cubic-bezier(.16,1,.3,1) 0.3s;
+  }
+  .seal-hero.in{ opacity:1; transform:scale(1) rotate(-6deg); }
+
   .wrap{ max-width:680px; margin:0 auto; padding:0 28px; position:relative; z-index:2; }
 
   .eyebrow{
@@ -249,11 +272,13 @@
 <div id="blob"></div>
 
 <section class="hero">
+  <img class="seal-watermark" src="assets/wax-seal.png" alt="" aria-hidden="true">
   <div class="hero-num" id="parallax-num">01</div>
   <div class="hero-inner">
     <div class="eyebrow reveal in">Bewerbung erforderlich</div>
     <h1 class="reveal in">Ein Wochenende.<br>Ein Kreis. <span class="accent">Eine Adresse,</span><br>die du erst erfährst,<br>wenn du ausgewählt wurdest.</h1>
     <p class="sub reveal in">Kein Programm im Vorfeld. Kein Ort im Vorfeld. Nur ein Kreis von Menschen, die bereits verstanden haben, worum es geht.</p>
+    <img class="seal-hero" id="hero-seal" src="assets/wax-seal.png" alt="Siegel">
     <div class="scroll-hint reveal in">Scrollen</div>
   </div>
 </section>
@@ -341,6 +366,10 @@
   }, { passive:true });
 
   // scroll reveal
+  requestAnimationFrame(() => {
+    setTimeout(() => document.getElementById('hero-seal').classList.add('in'), 200);
+  });
+
   const items = document.querySelectorAll('.reveal:not(.in)');
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
