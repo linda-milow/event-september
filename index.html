@@ -31,7 +31,6 @@
   }
   ::selection{ background:var(--accent); color:#0c0c0e; }
 
-  /* cursor blob */
   #blob{
     position:fixed;
     top:0; left:0;
@@ -47,7 +46,6 @@
   }
   #blob.on{ opacity:1; }
 
-  /* watermark seal, faint, repeated behind content */
   .seal-watermark{
     position:absolute;
     top:40%; left:50%;
@@ -83,7 +81,6 @@
   }
   .eyebrow::before{ content:''; width:24px; height:1px; background:var(--accent); }
 
-  /* ---------- HERO ---------- */
   .hero{
     min-height:100svh;
     display:flex;
@@ -108,19 +105,6 @@
     font-size:16px;
     max-width:40ch;
   }
-  .scroll-hint{
-    margin-top:80px;
-    font-size:11px;
-    letter-spacing:0.2em;
-    text-transform:uppercase;
-    color:var(--ink-dim);
-    display:flex; align-items:center; gap:10px;
-  }
-  .scroll-hint::after{
-    content:'';
-    width:1px; height:30px;
-    background:linear-gradient(var(--accent), transparent);
-  }
 
   section{ padding:120px 0; border-top:1px solid var(--line); position:relative; z-index:2; }
   h2{
@@ -135,7 +119,6 @@
   p + p{ margin-top:16px; }
   strong{ color:var(--ink); font-weight:500; }
 
-  /* ---------- CRITERIA GRID (showcase-style) ---------- */
   .grid{
     margin-top:44px;
     display:grid;
@@ -160,7 +143,6 @@
   }
   .grid-item p{ font-size:15px; color:var(--ink); max-width:none; }
 
-  /* ---------- ENTRIES / STEPS as showcase grid ---------- */
   .steps{
     margin-top:48px;
     display:grid;
@@ -193,7 +175,6 @@
   }
   .step p{ font-size:13.5px; max-width:none; }
 
-  /* ---------- HOSTS ---------- */
   .hosts{
     margin-top:48px;
     display:grid;
@@ -224,11 +205,7 @@
     color:var(--ink);
     margin-top:20px;
   }
-  .host .role{
-    font-size:13px;
-    color:var(--ink-dim);
-    margin-top:4px;
-  }
+  .host .role{ font-size:13px; color:var(--ink-dim); margin-top:4px; }
   .host .host-bio{
     font-size:13.5px;
     color:var(--ink-dim);
@@ -236,35 +213,20 @@
     margin-top:14px;
     line-height:1.6;
   }
-  .host .socials{
-    margin-top:18px;
-    display:flex;
-    gap:14px;
-  }
-  .host .socials a{
-    color:var(--ink-dim);
-    transition:color 0.3s ease;
-    display:flex;
-  }
+  .host .socials{ margin-top:18px; display:flex; gap:14px; }
+  .host .socials a{ color:var(--ink-dim); transition:color 0.3s ease; display:flex; }
   .host .socials a:hover{ color:var(--accent); }
   .host .socials svg{ width:18px; height:18px; }
 
-  /* ---------- PRESS LOGOS ---------- */
   .press{ padding:56px 0; border-top:1px solid var(--line); }
   .press-label{
-    font-family:'IBM Plex Mono', monospace;
     font-size:10.5px;
     letter-spacing:0.18em;
     text-transform:uppercase;
     color:var(--ink-dim);
     margin-bottom:32px;
   }
-  .press-row{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    gap:14px;
-  }
+  .press-row{ display:flex; flex-wrap:wrap; align-items:center; gap:14px; }
   .press-item{
     background:#e9e5db;
     border:1px solid var(--line);
@@ -274,63 +236,122 @@
     transition:transform 0.35s ease, box-shadow 0.35s ease;
   }
   .press-item:hover{ transform:translateY(-2px); box-shadow:0 14px 26px -14px rgba(0,0,0,0.5); }
-  .press-item img{
-    height:28px;
-    width:auto;
-    max-width:120px;
-    object-fit:contain;
-  }
+  .press-item img{ height:28px; width:auto; max-width:120px; object-fit:contain; }
 
-  /* ---------- APPLY FORM ---------- */
-  .apply-form{
-    margin-top:8px;
-    display:flex;
-    flex-direction:column;
-    gap:26px;
+  /* MailerLite form overrides */
+  #mlb2-43759632.ml-form-embedContainer{
+    box-sizing:border-box;
+    display:block !important;
+    margin:0;
+    width:100% !important;
+  }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper{
+    background-color:transparent !important;
+    border:none !important;
+    border-radius:0 !important;
+    display:block !important;
+    width:100% !important;
     max-width:540px;
   }
-  .field{ display:flex; flex-direction:column; gap:10px; }
-  .field label{
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper.embedForm{ max-width:540px; width:100%; }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody{
+    padding:0 !important;
+  }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent{
+    display:none;
+  }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group label{
     font-family:'Inter', sans-serif;
     font-size:13px;
     font-weight:500;
-    color:var(--ink);
+    color:var(--ink) !important;
+    margin-bottom:10px;
+    display:block;
   }
-  .field input,
-  .field select,
-  .field textarea{
-    background:var(--bg-2);
-    border:1px solid var(--line);
-    color:var(--ink);
-    font-family:'Inter', sans-serif;
-    font-size:14.5px;
-    font-weight:300;
-    padding:13px 16px;
-    outline:none;
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow{
+    margin:0 0 26px 0;
+  }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-last-item{
+    margin:0 0 26px 0;
+  }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input{
+    background:var(--bg-2) !important;
+    border:1px solid var(--line) !important;
+    border-radius:0 !important;
+    color:var(--ink) !important;
+    font-family:'Inter', sans-serif !important;
+    font-size:14.5px !important;
+    font-weight:300 !important;
+    padding:13px 16px !important;
+    width:100% !important;
     transition:border-color 0.3s ease, background 0.3s ease;
-    resize:vertical;
   }
-  .field input:focus,
-  .field select:focus,
-  .field textarea:focus{
-    border-color:var(--accent);
-    background:#17181b;
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:focus{
+    border-color:var(--accent) !important;
+    background:#17181b !important;
+    outline:none;
   }
-  .field select{
-    appearance:none;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%238f8c86' stroke-width='1.4' fill='none'/></svg>");
-    background-repeat:no-repeat;
-    background-position:right 16px center;
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::placeholder{
+    color:var(--ink-dim) !important;
+    opacity:0.6;
   }
-  .field select option{ background:var(--bg-2); color:var(--ink); }
-  .field input::placeholder,
-  .field textarea::placeholder{ color:var(--ink-dim); opacity:0.6; }
-  .apply-form button.btn{
-    align-self:flex-start;
-    border:none;
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow{
+    margin:0 0 26px 0;
+    float:none;
+    width:100%;
+  }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description,
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label p{
+    color:var(--ink-dim) !important;
+    font-family:'Inter', sans-serif !important;
+    font-size:13px !important;
+    font-weight:300 !important;
+    line-height:1.6 !important;
+  }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label p a{
+    color:var(--accent) !important;
+  }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit{
+    margin:0;
+    float:none;
+    width:auto;
+  }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button{
+    background-color:var(--accent) !important;
+    border:1px solid var(--accent) !important;
+    border-radius:0 !important;
+    color:#0c0c0e !important;
+    font-family:'Inter', sans-serif !important;
+    font-size:13px !important;
+    font-weight:500 !important;
+    letter-spacing:0.06em !important;
+    text-transform:uppercase;
+    padding:18px 36px !important;
+    width:auto !important;
+    cursor:pointer;
+    transition:transform 0.4s cubic-bezier(.16,1,.3,1), box-shadow 0.4s ease, background 0.4s ease;
+  }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover{
+    background-color:#dfa15f !important;
+    transform:translateY(-3px);
+    box-shadow:0 20px 40px -14px var(--accent-soft);
+  }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody{
+    padding:0 !important;
+  }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4{
+    font-family:'Syne', sans-serif !important;
+    font-size:1.4rem !important;
+    color:var(--ink) !important;
+    font-weight:600 !important;
+    margin-bottom:12px;
+  }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p{
+    color:var(--ink-dim) !important;
+    font-family:'Inter', sans-serif !important;
+    font-size:15px !important;
   }
 
-  /* ---------- CTA ---------- */
   .cta-section{ text-align:left; padding:130px 0 160px; }
   .cta-section h2{ max-width:15ch; }
   .btn{
@@ -380,7 +401,6 @@
     .reveal{ opacity:1; transform:none; }
     #blob{ display:none; }
   }
-
   @media (max-width: 720px){
     .grid, .steps, .hosts{ grid-template-columns:1fr; }
   }
@@ -388,6 +408,29 @@
     .hero{ padding:110px 20px 72px; }
     section{ padding:80px 0; }
   }
+
+  /* MailerLite loader */
+  .ml-form-embedSubmitLoad{
+    display:inline-block; width:20px; height:20px;
+  }
+  .ml-form-embedSubmitLoad:after{
+    content:" "; display:block; width:11px; height:11px;
+    margin:1px; border-radius:50%;
+    border:4px solid #fff;
+    border-color:#0c0c0e #0c0c0e #0c0c0e transparent;
+    animation:ml-form-embedSubmitLoad 1.2s linear infinite;
+  }
+  @keyframes ml-form-embedSubmitLoad{
+    0%{ transform:rotate(0deg); }
+    100%{ transform:rotate(360deg); }
+  }
+  .sr-only{
+    position:absolute; width:1px; height:1px; padding:0;
+    margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;
+  }
+  .ml-error input{ border-color:red !important; }
+  .ml-error .label-description,
+  .ml-error label:first-child{ color:#ff0000 !important; }
 </style>
 </head>
 <body>
@@ -494,7 +537,7 @@
     <div class="press-item reveal"><img src="logo-invest.png" alt="INVEST"></div>
     <div class="press-item reveal"><img src="logo-mgo.png" alt="Mediengruppe Oberfranken"></div>
     <div class="press-item reveal"><img src="logo-aledius.png" alt="Aledius"></div>
-    <div class="press-item reveal"><img src="logo-bitsandpretzels.png" alt="Bits & Pretzels"></div>
+    <div class="press-item reveal"><img src="logo-bitsandpretzels.png" alt="Bits &amp; Pretzels"></div>
   </div>
 </section>
 
@@ -528,92 +571,89 @@
   <h2 class="reveal">Erzähl uns, wer du bist.</h2>
   <p class="reveal" style="margin-bottom:36px;">Kurz und ehrlich – das reicht für die Vorauswahl.</p>
 
-  <form class="apply-form" action="https://formspree.io/f/maqgzwvq" method="POST">
-    <div class="field">
-      <label for="f-name">Vor- und Nachname</label>
-      <input type="text" id="f-name" name="Name" required>
+  <div id="mlb2-43759632" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-43759632">
+    <div class="ml-form-align-center">
+      <div class="ml-form-embedWrapper embedForm">
+        <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+          <div class="ml-form-embedContent" style="display:none;"></div>
+          <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2509505/forms/193041057399702977/subscribe" data-code="" method="post" target="_blank">
+            <div class="ml-form-formContent">
+              <div class="ml-form-fieldRow">
+                <div class="ml-field-group ml-field-name ml-validate-required">
+                  <label>Vorname</label>
+                  <input aria-label="name" aria-required="true" type="text" class="form-control" name="fields[name]" placeholder="Vorname" autocomplete="given-name">
+                </div>
+              </div>
+              <div class="ml-form-fieldRow">
+                <div class="ml-field-group ml-field-last_name ml-validate-required">
+                  <label>Nachname</label>
+                  <input aria-label="last_name" aria-required="true" type="text" class="form-control" name="fields[last_name]" placeholder="Nachname" autocomplete="family-name">
+                </div>
+              </div>
+              <div class="ml-form-fieldRow">
+                <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                  <label>Business-E-Mail</label>
+                  <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="E-Mail" autocomplete="email">
+                </div>
+              </div>
+              <div class="ml-form-fieldRow ml-last-item">
+                <div class="ml-field-group ml-field-phone ml-validate-required">
+                  <label>Handynummer</label>
+                  <input aria-label="phone" aria-required="true" type="text" class="form-control" name="fields[phone]" placeholder="+49 ..." autocomplete="tel">
+                </div>
+              </div>
+            </div>
+            <div class="ml-form-checkboxRow ml-validate-required">
+              <label class="checkbox">
+                <input type="checkbox">
+                <div class="label-description">
+                  <p>Mit dem Absenden stimmst du zu, dass wir dich per E-Mail und Telefon kontaktieren dürfen. Eine Abmeldung ist jederzeit möglich. Es gilt die <a href="https://reuter.company/datenschutz" target="_blank">Datenschutzerklärung.</a></p>
+                </div>
+              </label>
+            </div>
+            <input type="hidden" name="ml-submit" value="1">
+            <div class="ml-form-embedSubmit">
+              <button type="submit" class="primary">BEWERBUNG ABSENDEN</button>
+              <button disabled="disabled" style="display:none;" type="button" class="loading">
+                <div class="ml-form-embedSubmitLoad"></div>
+                <span class="sr-only">Loading...</span>
+              </button>
+            </div>
+            <input type="hidden" name="anticsrf" value="true">
+          </form>
+        </div>
+        <div class="ml-form-successBody row-success" style="display:none;">
+          <div class="ml-form-successContent">
+            <h4>Das hat geklappt.</h4>
+            <p>Deine Bewerbung wird geprüft und wir informieren dich über weitere Schritte.</p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="field">
-      <label for="f-email">Business-E-Mail</label>
-      <input type="email" id="f-email" name="E-Mail" required>
-    </div>
-
-    <div class="field">
-      <label for="f-linkedin">LinkedIn-Profil (URL)</label>
-      <input type="url" id="f-linkedin" name="LinkedIn" placeholder="https://linkedin.com/in/..." required>
-    </div>
-
-    <div class="field">
-      <label for="f-legalform">Rechtsform des operativen Geschäfts</label>
-      <select id="f-legalform" name="Rechtsform" required>
-        <option value="" disabled selected>Bitte wählen</option>
-        <option>GmbH</option>
-        <option>Holding-Struktur</option>
-        <option>Einzelunternehmen</option>
-        <option>Sonstige</option>
-      </select>
-    </div>
-
-    <div class="field">
-      <label for="f-revenue">Jahresumsatz des Unternehmens</label>
-      <select id="f-revenue" name="Jahresumsatz" required>
-        <option value="" disabled selected>Bitte wählen</option>
-        <option>unter 2,5 Mio. €</option>
-        <option>2,5 bis 5 Mio. €</option>
-        <option>über 5 Mio. €</option>
-      </select>
-    </div>
-
-    <div class="field">
-      <label for="f-cryptostructure">Struktur deiner Krypto-Assets</label>
-      <select id="f-cryptostructure" name="Krypto-Struktur" required>
-        <option value="" disabled selected>Bitte wählen</option>
-        <option>Privatvermögen (Cold Storage)</option>
-        <option>Im Betriebsvermögen (GmbH)</option>
-        <option>Krypto-Holding</option>
-        <option>Noch keine Krypto-Assets</option>
-      </select>
-    </div>
-
-    <div class="field">
-      <label for="f-liquidity">Liquiditäts-Volumen in Digital Assets</label>
-      <select id="f-liquidity" name="Liquiditätsvolumen" required>
-        <option value="" disabled selected>Bitte wählen</option>
-        <option>unter 100.000 €</option>
-        <option>100.000 € bis 500.000 €</option>
-        <option>über 500.000 €</option>
-      </select>
-    </div>
-
-    <div class="field">
-      <label for="f-address">Diskrete Versandadresse</label>
-      <textarea id="f-address" name="Versandadresse" rows="3" placeholder="Straße, PLZ, Ort, Land" required></textarea>
-    </div>
-
-    <div class="field">
-      <label for="f-phone">Handynummer</label>
-      <input type="tel" id="f-phone" name="Handynummer" placeholder="+49 ..." required>
-    </div>
-
-    <button type="submit" class="btn" style="margin-top:8px;">Bewerbung absenden
-      <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h11M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
-    </button>
-
-    <p style="font-size:13px; color:var(--ink-dim); max-width:480px; margin-top:6px;">Deine Angaben werden vertraulich behandelt und ausschließlich zur Prüfung deiner Bewerbung verwendet. Zugriff hat nur das Team, das den Event organisiert, sowie die zur Verarbeitung technisch notwendigen Dienste.</p>
-  </form>
+  </div>
 </section>
 
 </div>
 
-<footer style="text-align:center; padding:40px 0 56px; font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:0.08em; color:var(--ink-dim); opacity:0.5;">
+<footer>
   <a href="imprint.html" style="color:inherit; text-decoration:none;">Impressum</a>
   &nbsp;·&nbsp;
   <a href="datenschutz.html" style="color:inherit; text-decoration:none;">Datenschutz</a>
 </footer>
 
 <script>
-  // interactive cursor blob with lerp smoothing
+  function ml_webform_success_43759632() {
+    var $ = ml_jQuery || jQuery;
+    $('.ml-subscribe-form-43759632 .row-success').show();
+    $('.ml-subscribe-form-43759632 .row-form').hide();
+  }
+</script>
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
+<script>
+  fetch("https://assets.mailerlite.com/jsonp/2509505/forms/193041057399702977/takel");
+</script>
+
+<script>
   const blob = document.getElementById('blob');
   let mouseX = window.innerWidth/2, mouseY = window.innerHeight/2;
   let blobX = mouseX, blobY = mouseY;
@@ -630,7 +670,6 @@
   }
   animateBlob();
 
-  // scroll reveal
   requestAnimationFrame(() => {
     setTimeout(() => document.getElementById('hero-seal').classList.add('in'), 200);
   });
