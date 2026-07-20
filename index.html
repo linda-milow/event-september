@@ -32,38 +32,28 @@
   ::selection{ background:var(--accent); color:#0c0c0e; }
 
   #blob{
-    position:fixed;
-    top:0; left:0;
+    position:fixed; top:0; left:0;
     width:520px; height:520px;
     border-radius:50%;
     background:radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
-    pointer-events:none;
-    z-index:1;
+    pointer-events:none; z-index:1;
     transform:translate(-50%,-50%);
-    filter:blur(10px);
-    opacity:0;
+    filter:blur(10px); opacity:0;
     transition:opacity 0.6s ease;
   }
   #blob.on{ opacity:1; }
 
   .seal-watermark{
-    position:absolute;
-    top:40%; left:50%;
+    position:absolute; top:40%; left:50%;
     width:900px; max-width:140vw;
     transform:translate(-50%,-50%);
-    opacity:0.05;
-    filter:grayscale(1) contrast(1.4);
-    pointer-events:none;
-    z-index:0;
-    mix-blend-mode:luminosity;
+    opacity:0.05; filter:grayscale(1) contrast(1.4);
+    pointer-events:none; z-index:0; mix-blend-mode:luminosity;
   }
-
   .seal-hero{
-    width:110px;
-    margin-top:44px;
+    width:110px; margin-top:44px;
     filter:drop-shadow(0 18px 30px rgba(0,0,0,0.5));
-    opacity:0;
-    transform:scale(0.7) rotate(-18deg);
+    opacity:0; transform:scale(0.7) rotate(-18deg);
     transition:opacity 0.8s cubic-bezier(.16,1,.3,1) 0.3s, transform 0.9s cubic-bezier(.16,1,.3,1) 0.3s;
   }
   .seal-hero.in{ opacity:1; transform:scale(1) rotate(-6deg); }
@@ -72,328 +62,139 @@
 
   .eyebrow{
     font-family:'Inter', sans-serif;
-    font-size:11px;
-    letter-spacing:0.24em;
-    text-transform:uppercase;
-    color:var(--accent);
-    font-weight:500;
+    font-size:11px; letter-spacing:0.24em; text-transform:uppercase;
+    color:var(--accent); font-weight:500;
     display:flex; align-items:center; gap:12px;
   }
   .eyebrow::before{ content:''; width:24px; height:1px; background:var(--accent); }
 
   .hero{
-    min-height:100svh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    padding:140px 28px 100px;
-    position:relative;
+    min-height:100svh; display:flex; flex-direction:column;
+    justify-content:center; padding:140px 28px 100px; position:relative;
   }
   .hero-inner{ max-width:680px; margin:0 auto; width:100%; position:relative; z-index:2; }
   .hero .eyebrow{ margin-bottom:34px; }
   h1{
-    font-family:'Syne', sans-serif;
-    font-weight:700;
+    font-family:'Syne', sans-serif; font-weight:700;
     font-size:clamp(2.4rem, 7vw, 4.2rem);
-    line-height:1.08;
-    letter-spacing:-0.02em;
+    line-height:1.08; letter-spacing:-0.02em;
   }
   h1 .accent{ color:var(--accent); }
   .hero .sub{
-    margin-top:30px;
-    color:var(--ink-dim);
-    font-size:16px;
-    max-width:40ch;
+    margin-top:30px; color:var(--ink-dim);
+    font-size:16px; max-width:48ch;
   }
 
   section{ padding:120px 0; border-top:1px solid var(--line); position:relative; z-index:2; }
   h2{
-    font-family:'Syne', sans-serif;
-    font-weight:600;
+    font-family:'Syne', sans-serif; font-weight:600;
     font-size:clamp(1.7rem, 4vw, 2.5rem);
-    line-height:1.25;
-    letter-spacing:-0.01em;
-    margin-bottom:30px;
+    line-height:1.25; letter-spacing:-0.01em; margin-bottom:30px;
   }
   p{ color:var(--ink-dim); font-size:16px; max-width:52ch; }
   p + p{ margin-top:16px; }
   strong{ color:var(--ink); font-weight:500; }
 
   .grid{
-    margin-top:44px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
+    margin-top:44px; display:grid; grid-template-columns:1fr 1fr;
+    gap:1px; background:var(--line); border:1px solid var(--line);
   }
-  .grid-item{
-    background:var(--bg);
-    padding:32px 28px;
-    transition:background 0.4s ease, transform 0.4s ease;
-  }
+  .grid-item{ background:var(--bg); padding:32px 28px; transition:background 0.4s ease, transform 0.4s ease; }
   .grid-item:hover{ background:var(--bg-2); transform:translateY(-2px); }
   .grid-item .gi-num{
-    font-family:'Syne', sans-serif;
-    color:var(--accent);
-    font-size:12px;
-    letter-spacing:0.1em;
-    margin-bottom:14px;
-    display:block;
+    font-family:'Syne', sans-serif; color:var(--accent);
+    font-size:12px; letter-spacing:0.1em; margin-bottom:14px; display:block;
   }
   .grid-item p{ font-size:15px; color:var(--ink); max-width:none; }
 
   .steps{
-    margin-top:48px;
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
+    margin-top:48px; display:grid; grid-template-columns:repeat(3, 1fr);
+    gap:1px; background:var(--line); border:1px solid var(--line);
   }
-  .step{
-    background:var(--bg);
-    padding:36px 26px;
-    transition:background 0.4s ease;
-  }
+  .step{ background:var(--bg); padding:36px 26px; transition:background 0.4s ease; }
   .step:hover{ background:var(--bg-2); }
   .step .num{
-    font-family:'Syne', sans-serif;
-    font-weight:800;
-    font-size:34px;
-    color:var(--accent);
-    line-height:1;
-    margin-bottom:18px;
-    display:block;
+    font-family:'Syne', sans-serif; font-weight:800;
+    font-size:34px; color:var(--accent); line-height:1; margin-bottom:18px; display:block;
   }
-  .step h3{
-    font-family:'Syne', sans-serif;
-    font-weight:600;
-    font-size:15px;
-    color:var(--ink);
-    margin-bottom:10px;
-  }
+  .step h3{ font-family:'Syne', sans-serif; font-weight:600; font-size:15px; color:var(--ink); margin-bottom:10px; }
   .step p{ font-size:13.5px; max-width:none; }
 
   .hosts{
-    margin-top:48px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
+    margin-top:48px; display:grid; grid-template-columns:1fr 1fr;
+    gap:1px; background:var(--line); border:1px solid var(--line);
   }
-  .host{
-    background:var(--bg);
-    padding:34px 30px 30px;
-    transition:background 0.4s ease;
-  }
+  .host{ background:var(--bg); padding:34px 30px 30px; transition:background 0.4s ease; }
   .host:hover{ background:var(--bg-2); }
   .host img{
-    width:84px; height:84px;
-    border-radius:50%;
-    object-fit:cover;
-    object-position:top center;
-    filter:grayscale(0.4);
-    transition:filter 0.4s ease;
+    width:84px; height:84px; border-radius:50%;
+    object-fit:cover; object-position:top center;
+    filter:grayscale(0.4); transition:filter 0.4s ease;
   }
   .host:hover img{ filter:grayscale(0); }
-  .host h3{
-    font-family:'Syne', sans-serif;
-    font-weight:600;
-    font-size:17px;
-    color:var(--ink);
-    margin-top:20px;
-  }
+  .host h3{ font-family:'Syne', sans-serif; font-weight:600; font-size:17px; color:var(--ink); margin-top:20px; }
   .host .role{ font-size:13px; color:var(--ink-dim); margin-top:4px; }
-  .host .host-bio{
-    font-size:13.5px;
-    color:var(--ink-dim);
-    max-width:none;
-    margin-top:14px;
-    line-height:1.6;
-  }
+  .host .host-bio{ font-size:13.5px; color:var(--ink-dim); max-width:none; margin-top:14px; line-height:1.6; }
   .host .socials{ margin-top:18px; display:flex; gap:14px; }
   .host .socials a{ color:var(--ink-dim); transition:color 0.3s ease; display:flex; }
   .host .socials a:hover{ color:var(--accent); }
   .host .socials svg{ width:18px; height:18px; }
 
   .press{ padding:56px 0; border-top:1px solid var(--line); }
-  .press-label{
-    font-size:10.5px;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:var(--ink-dim);
-    margin-bottom:32px;
-  }
+  .press-label{ font-size:10.5px; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-dim); margin-bottom:32px; }
   .press-row{ display:flex; flex-wrap:wrap; align-items:center; gap:14px; }
   .press-item{
-    background:#e9e5db;
-    border:1px solid var(--line);
-    padding:14px 20px;
-    display:flex;
-    align-items:center;
+    background:#e9e5db; border:1px solid var(--line); padding:14px 20px;
+    display:flex; align-items:center;
     transition:transform 0.35s ease, box-shadow 0.35s ease;
   }
   .press-item:hover{ transform:translateY(-2px); box-shadow:0 14px 26px -14px rgba(0,0,0,0.5); }
   .press-item img{ height:28px; width:auto; max-width:120px; object-fit:contain; }
 
-  /* MailerLite form overrides */
-  #mlb2-43759632.ml-form-embedContainer{
-    box-sizing:border-box;
-    display:block !important;
-    margin:0;
-    width:100% !important;
-  }
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper{
-    background-color:transparent !important;
-    border:none !important;
-    border-radius:0 !important;
-    display:block !important;
-    width:100% !important;
-    max-width:540px;
-  }
+  /* MailerLite overrides */
+  #mlb2-43759632.ml-form-embedContainer{ box-sizing:border-box; display:block !important; margin:0; width:100% !important; }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper{ background-color:transparent !important; border:none !important; border-radius:0 !important; display:block !important; width:100% !important; max-width:540px; }
   #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper.embedForm{ max-width:540px; width:100%; }
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody{
-    padding:0 !important;
-  }
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent{
-    display:none;
-  }
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group label{
-    font-family:'Inter', sans-serif;
-    font-size:13px;
-    font-weight:500;
-    color:var(--ink) !important;
-    margin-bottom:10px;
-    display:block;
-  }
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow{
-    margin:0 0 26px 0;
-  }
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-last-item{
-    margin:0 0 26px 0;
-  }
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input{
-    background:var(--bg-2) !important;
-    border:1px solid var(--line) !important;
-    border-radius:0 !important;
-    color:var(--ink) !important;
-    font-family:'Inter', sans-serif !important;
-    font-size:14.5px !important;
-    font-weight:300 !important;
-    padding:13px 16px !important;
-    width:100% !important;
-    transition:border-color 0.3s ease, background 0.3s ease;
-  }
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:focus{
-    border-color:var(--accent) !important;
-    background:#17181b !important;
-    outline:none;
-  }
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::placeholder{
-    color:var(--ink-dim) !important;
-    opacity:0.6;
-  }
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow{
-    margin:0 0 26px 0;
-    float:none;
-    width:100%;
-  }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody{ padding:0 !important; }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent{ display:none; }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group label{ font-family:'Inter', sans-serif; font-size:13px; font-weight:500; color:var(--ink) !important; margin-bottom:10px; display:block; }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow{ margin:0 0 26px 0; }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-last-item{ margin:0 0 26px 0; }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input{ background:var(--bg-2) !important; border:1px solid var(--line) !important; border-radius:0 !important; color:var(--ink) !important; font-family:'Inter', sans-serif !important; font-size:14.5px !important; font-weight:300 !important; padding:13px 16px !important; width:100% !important; transition:border-color 0.3s ease, background 0.3s ease; }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:focus{ border-color:var(--accent) !important; background:#17181b !important; outline:none; }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::placeholder{ color:var(--ink-dim) !important; opacity:0.6; }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow{ margin:0 0 26px 0; float:none; width:100%; }
   #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description,
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label p{
-    color:var(--ink-dim) !important;
-    font-family:'Inter', sans-serif !important;
-    font-size:13px !important;
-    font-weight:300 !important;
-    line-height:1.6 !important;
-  }
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label p a{
-    color:var(--accent) !important;
-  }
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit{
-    margin:0;
-    float:none;
-    width:auto;
-  }
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button{
-    background-color:var(--accent) !important;
-    border:1px solid var(--accent) !important;
-    border-radius:0 !important;
-    color:#0c0c0e !important;
-    font-family:'Inter', sans-serif !important;
-    font-size:13px !important;
-    font-weight:500 !important;
-    letter-spacing:0.06em !important;
-    text-transform:uppercase;
-    padding:18px 36px !important;
-    width:auto !important;
-    cursor:pointer;
-    transition:transform 0.4s cubic-bezier(.16,1,.3,1), box-shadow 0.4s ease, background 0.4s ease;
-  }
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover{
-    background-color:#dfa15f !important;
-    transform:translateY(-3px);
-    box-shadow:0 20px 40px -14px var(--accent-soft);
-  }
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody{
-    padding:0 !important;
-  }
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4{
-    font-family:'Syne', sans-serif !important;
-    font-size:1.4rem !important;
-    color:var(--ink) !important;
-    font-weight:600 !important;
-    margin-bottom:12px;
-  }
-  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p{
-    color:var(--ink-dim) !important;
-    font-family:'Inter', sans-serif !important;
-    font-size:15px !important;
-  }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label p{ color:var(--ink-dim) !important; font-family:'Inter', sans-serif !important; font-size:13px !important; font-weight:300 !important; line-height:1.6 !important; }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label p a{ color:var(--accent) !important; }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit{ margin:0; float:none; width:auto; }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button{ background-color:var(--accent) !important; border:1px solid var(--accent) !important; border-radius:0 !important; color:#0c0c0e !important; font-family:'Inter', sans-serif !important; font-size:13px !important; font-weight:500 !important; letter-spacing:0.06em !important; text-transform:uppercase; padding:18px 36px !important; width:auto !important; cursor:pointer; transition:transform 0.4s cubic-bezier(.16,1,.3,1), box-shadow 0.4s ease, background 0.4s ease; }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover{ background-color:#dfa15f !important; transform:translateY(-3px); box-shadow:0 20px 40px -14px var(--accent-soft); }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody{ padding:0 !important; }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4{ font-family:'Syne', sans-serif !important; font-size:1.4rem !important; color:var(--ink) !important; font-weight:600 !important; margin-bottom:12px; }
+  #mlb2-43759632.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p{ color:var(--ink-dim) !important; font-family:'Inter', sans-serif !important; font-size:15px !important; }
 
   .cta-section{ text-align:left; padding:130px 0 160px; }
-  .cta-section h2{ max-width:15ch; }
+  .cta-section h2{ max-width:18ch; }
   .btn{
-    display:inline-flex;
-    align-items:center;
-    gap:12px;
-    margin-top:44px;
-    padding:18px 36px;
-    background:var(--accent);
-    border:1px solid var(--accent);
-    color:#0c0c0e;
-    font-family:'Inter', sans-serif;
-    font-size:13px;
-    font-weight:500;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    text-decoration:none;
-    cursor:pointer;
+    display:inline-flex; align-items:center; gap:12px;
+    margin-top:44px; padding:18px 36px;
+    background:var(--accent); border:1px solid var(--accent);
+    color:#0c0c0e; font-family:'Inter', sans-serif;
+    font-size:13px; font-weight:500; letter-spacing:0.06em;
+    text-transform:uppercase; text-decoration:none; cursor:pointer;
     transition:transform 0.4s cubic-bezier(.16,1,.3,1), box-shadow 0.4s ease, background 0.4s ease;
   }
-  .btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 20px 40px -14px var(--accent-soft);
-    background:#dfa15f;
-  }
+  .btn:hover{ transform:translateY(-3px); box-shadow:0 20px 40px -14px var(--accent-soft); background:#dfa15f; }
   .btn:focus-visible{ outline:2px solid var(--accent); outline-offset:4px; }
 
   footer{
-    text-align:center;
-    padding:44px 0 60px;
-    font-size:10.5px;
-    letter-spacing:0.1em;
-    color:var(--ink-dim);
-    opacity:0.5;
-    position:relative; z-index:2;
+    text-align:center; padding:44px 0 60px;
+    font-size:10.5px; letter-spacing:0.1em;
+    color:var(--ink-dim); opacity:0.5; position:relative; z-index:2;
   }
 
-  .reveal{
-    opacity:0;
-    transform:translateY(28px);
-    transition:opacity 0.9s cubic-bezier(.16,1,.3,1), transform 0.9s cubic-bezier(.16,1,.3,1);
-  }
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity 0.9s cubic-bezier(.16,1,.3,1), transform 0.9s cubic-bezier(.16,1,.3,1); }
   .reveal.in{ opacity:1; transform:translateY(0); }
 
   @media (prefers-reduced-motion: reduce){
@@ -401,36 +202,15 @@
     .reveal{ opacity:1; transform:none; }
     #blob{ display:none; }
   }
-  @media (max-width: 720px){
-    .grid, .steps, .hosts{ grid-template-columns:1fr; }
-  }
-  @media (max-width: 480px){
-    .hero{ padding:110px 20px 72px; }
-    section{ padding:80px 0; }
-  }
+  @media (max-width: 720px){ .grid, .steps, .hosts{ grid-template-columns:1fr; } }
+  @media (max-width: 480px){ .hero{ padding:110px 20px 72px; } section{ padding:80px 0; } }
 
-  /* MailerLite loader */
-  .ml-form-embedSubmitLoad{
-    display:inline-block; width:20px; height:20px;
-  }
-  .ml-form-embedSubmitLoad:after{
-    content:" "; display:block; width:11px; height:11px;
-    margin:1px; border-radius:50%;
-    border:4px solid #fff;
-    border-color:#0c0c0e #0c0c0e #0c0c0e transparent;
-    animation:ml-form-embedSubmitLoad 1.2s linear infinite;
-  }
-  @keyframes ml-form-embedSubmitLoad{
-    0%{ transform:rotate(0deg); }
-    100%{ transform:rotate(360deg); }
-  }
-  .sr-only{
-    position:absolute; width:1px; height:1px; padding:0;
-    margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;
-  }
+  .ml-form-embedSubmitLoad{ display:inline-block; width:20px; height:20px; }
+  .ml-form-embedSubmitLoad:after{ content:" "; display:block; width:11px; height:11px; margin:1px; border-radius:50%; border:4px solid #fff; border-color:#0c0c0e #0c0c0e #0c0c0e transparent; animation:ml-form-embedSubmitLoad 1.2s linear infinite; }
+  @keyframes ml-form-embedSubmitLoad{ 0%{ transform:rotate(0deg); } 100%{ transform:rotate(360deg); } }
+  .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
   .ml-error input{ border-color:red !important; }
-  .ml-error .label-description,
-  .ml-error label:first-child{ color:#ff0000 !important; }
+  .ml-error .label-description, .ml-error label:first-child{ color:#ff0000 !important; }
 </style>
 </head>
 <body>
@@ -441,9 +221,9 @@
   <img class="seal-watermark" src="wax-seal.png" alt="" aria-hidden="true">
   <div class="hero-inner">
     <div class="eyebrow reveal in">The Capital Circle · Future of Wealth</div>
-    <h1 class="reveal in">Ein Tag.<br>Ein Kreis. <span class="accent">Eine Adresse,</span><br>die du erst erfährst,<br>wenn du ausgewählt wurdest.</h1>
-    <p class="sub reveal in">Kein Programm im Vorfeld. Kein Ort im Vorfeld. Nur ein handverlesener Kreis von Menschen, die voneinander profitieren und lernen können.</p>
-    <a href="#bewerbung" class="btn reveal in" style="margin-top:34px;">Jetzt bewerben
+    <h1 class="reveal in">Das <span class="accent">wichtigste Finanz- und<br>Networking-Event,</span><br>das du 2026 erleben wirst.</h1>
+    <p class="sub reveal in">Ein Tag. Ein handverlesener Kreis. Eine Adresse, die du erst erfährst, wenn deine Teilnahme bestätigt wurde. Ein privater Rahmen für Unternehmer und Investoren, die ihr Vermögen aktiv steuern – nicht verwalten lassen.</p>
+    <a href="#warteliste" class="btn reveal in" style="margin-top:34px;">Jetzt bewerben
       <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h11M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
     </a>
     <img class="seal-hero" id="hero-seal" src="wax-seal.png" alt="Siegel">
@@ -453,51 +233,49 @@
 <div class="wrap">
 
 <section>
-  <div class="eyebrow reveal" style="margin-bottom:24px;">Ein handverlesener Kreis</div>
-  <h2 class="reveal">Nicht die Bühne zählt. Der Tisch zählt.</h2>
-  <p class="reveal">Wer hier sitzt, wurde ausgewählt, weil er zum Kreis passt.</p>
-  <p class="reveal">Der eigentliche Wert unserer Veranstaltung entsteht nicht auf der Bühne, sondern am Tisch: im offenen Austausch mit anderen, die auf deinem Niveau bauen, investieren und denken. Menschen, von denen du lernst – und die von dir lernen.</p>
-  <p class="reveal">Deshalb bleibt die Teilnehmerzahl bewusst kuratiert. Jede Bewerbung wird persönlich geprüft, jeder Platz bewusst vergeben.</p>
+  <div class="eyebrow reveal" style="margin-bottom:24px;">Worum es geht</div>
+  <h2 class="reveal">Du hast Vermögen aufgebaut.<br>Jetzt willst du es nicht dem Zufall überlassen.</h2>
+  <p class="reveal">Vielleicht liegt ein Teil davon in Krypto – steuerlich noch nicht sauber aufgestellt, über mehrere Wallets verteilt. Vielleicht zahlst du dir ein Gehalt aus deiner GmbH und vergisst dabei, dass du auch Gesellschafter bist. Wer nur als Geschäftsführer denkt, baut kein nachhaltiges Vermögen auf.</p>
+  <p class="reveal">Dein Steuerberater versteht dein Business nicht. Dein Bankberater erst recht nicht. Also wartest du ... auf den richtigen Moment, den richtigen Berater, die richtige Struktur. Und weißt gleichzeitig, dass das Warten seinen Preis hat.</p>
+  <p class="reveal">Die Leute, die das bereits gelöst haben, sitzen an diesem Tag mit dir am Tisch.</p>
 </section>
 
 <section>
-  <div class="eyebrow reveal" style="margin-bottom:24px;">Zulassungskriterien</div>
-  <h2 class="reveal">Das hier ist nicht für jeden gedacht.</h2>
-  <p class="reveal">Es ist für dich, wenn:</p>
+  <div class="eyebrow reveal" style="margin-bottom:24px;">Für wen es ist</div>
+  <h2 class="reveal">Das hier passt zu dir, wenn:</h2>
   <div class="grid">
     <div class="grid-item reveal"><span class="gi-num">01</span><p>Du bereits Vermögen aufgebaut hast und es jetzt klüger strukturieren willst.</p></div>
-    <div class="grid-item reveal"><span class="gi-num">02</span><p>Krypto für dich längst kein Hobby mehr ist, sondern Teil deiner Strategie.</p></div>
+    <div class="grid-item reveal"><span class="gi-num">02</span><p>Krypto für dich Teil deiner Strategie ist – und du die steuerliche Seite endlich sauber aufstellen willst.</p></div>
     <div class="grid-item reveal"><span class="gi-num">03</span><p>Du Antworten suchst, die über Standard-Beratung hinausgehen.</p></div>
-    <div class="grid-item reveal"><span class="gi-num">04</span><p>Dir persönlicher Austausch mehr bringt als ein weiteres Webinar.</p></div>
+    <div class="grid-item reveal"><span class="gi-num">04</span><p>Dir persönlicher Austausch auf Augenhöhe mehr bringt als ein weiteres Webinar.</p></div>
   </div>
-  <p class="reveal" style="margin-top:30px;">Wenn du dich darin wiedererkennst – lies weiter.</p>
 </section>
 
 <section>
   <div class="eyebrow reveal" style="margin-bottom:24px;">Ablauf</div>
-  <h2 class="reveal">Drei Schritte. Kein Ort, bis zuletzt.</h2>
+  <h2 class="reveal">Drei Schritte bis zum Event.</h2>
   <div class="steps">
     <div class="step reveal">
       <span class="num">I</span>
-      <h3>Bewerbung</h3>
-      <p>Kurz, unkompliziert – wir wollen wissen, wer du bist und wo du stehst.</p>
+      <h3>Warteliste</h3>
+      <p>Trag dich ein. Wir melden uns persönlich – mit einem kurzen Gespräch, um zu prüfen, ob der Kreis passt.</p>
     </div>
     <div class="step reveal">
       <span class="num">II</span>
       <h3>Auswahl</h3>
-      <p>Die Teilnehmerzahl ist bewusst klein gehalten. Nicht jeder, der sich bewirbt, bekommt einen Platz.</p>
+      <p>Die Plätze sind limitiert. Wer keinen Platz erhält, kommt automatisch auf die Warteliste für kommende Veranstaltungen.</p>
     </div>
     <div class="step reveal">
       <span class="num">III</span>
-      <h3>Zustellung</h3>
-      <p>Bist du ausgewählt, bekommst du bis zum <strong>[Datum]</strong> Post – mit Ort, Datum und allem Weiteren, das du wissen musst.</p>
+      <h3>Einladung</h3>
+      <p>Bestätigte Teilnehmer erhalten ihre persönliche Einladung – mit Ort, Datum und allem, das sie wissen müssen.</p>
     </div>
   </div>
 </section>
 
 <section>
-  <div class="eyebrow reveal" style="margin-bottom:24px;">Wer euch empfängt</div>
-  <h2 class="reveal">Deine Gastgeber.</h2>
+  <div class="eyebrow reveal" style="margin-bottom:24px;">Deine Gastgeber</div>
+  <h2 class="reveal">Zwei Perspektiven. Eine gemeinsame Basis.</h2>
   <div class="hosts">
     <div class="host reveal">
       <img src="tami.png" alt="Tami Mönnig">
@@ -508,7 +286,7 @@
         <a href="https://www.linkedin.com/in/tami-moennig/?locale=en" target="_blank" rel="noopener" aria-label="Tami auf LinkedIn">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12.02H3V8.98zm7 0h3.83v1.64h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.78 2.66 4.78 6.11v6.33h-4v-5.61c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.71h-4V8.98z"/></svg>
         </a>
-        <a href="https://reuter.company/events" target="_blank" rel="noopener" aria-label="Tami Website">
+        <a href="https://taxmon.ch" target="_blank" rel="noopener" aria-label="Tami Website">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg>
         </a>
       </div>
@@ -542,40 +320,29 @@
 </section>
 
 <section>
-  <div class="eyebrow reveal" style="margin-bottom:24px;">Privatsphäre als Prinzip</div>
-  <h2 class="reveal">Privatsphäre als Basis für einen offenen Austausch.</h2>
-  <p class="reveal">In einem kleinen, geschützten Rahmen bringen wir internationales Steuer-Know-how auf den Punkt und zeigen moderne Lösungen, um dein Portfolio mit innovativen Ansätzen zu ergänzen und zu schützen.</p>
-  <p class="reveal">Zwei unterschiedliche Perspektiven, eine gemeinsame Basis: steuerliche Sicherheit. Aus der Kombination von Krypto und KI in der Vermögensverwaltung entsteht ein Ansatz, der Schwankungen reduziert und Vermögen nachhaltig schützt – das Beste aus beiden Welten, an einem Wochenende auf den Punkt gebracht.</p>
-</section>
-
-<section>
-  <div class="eyebrow reveal" style="margin-bottom:24px;">Worum es geht</div>
-  <h2 class="reveal">Du hast Vermögen aufgebaut. Jetzt willst du es nicht dem Zufall überlassen.</h2>
-  <p class="reveal">Vielleicht liegt ein Teil davon in Krypto – verstreut über Wallets und Exchanges, steuerlich noch nicht sauber aufgestellt. Vielleicht zahlst du dir ein Gehalt aus deiner GmbH, das du gar nicht brauchst, während das Geld aus dem Brutto viel effizienter arbeiten könnte.</p>
-  <p class="reveal">Dein Steuerberater versteht dein Business nicht. Dein Bankberater erst recht nicht. Also machst du es allein – und weißt gleichzeitig, dass das keine Dauerlösung ist.</p>
-  <p class="reveal">Die Leute, die das bereits gelöst haben, sitzen an diesem Tag mit dir am Tisch.</p>
-</section>
-
-<section>
   <div class="eyebrow reveal" style="margin-bottom:24px;">Was dich erwartet</div>
-  <h2 class="reveal">Kein Frontalvortrag. Kein Pitch. Kein Panel für die Masse.</h2>
-  <p class="reveal">Ein Tag mit ausgewählten Impulsen – und dem Raum danach, um mit den richtigen Menschen ins Gespräch zu kommen. Das ist der eigentliche Wert.</p>
-  <p class="reveal">Was danach passiert, entscheidest du.</p>
+  <h2 class="reveal">Inhalt, der zählt. Gespräche, die bleiben.</h2>
+  <p class="reveal">Der Tag verbindet ausgewählte Impulse von Experten aus Vermögensstrukturierung, Krypto-Steueroptimierung und alternativen Anlageklassen – mit dem Raum, diese Themen in kleiner Runde wirklich durchzudenken.</p>
+  <p class="reveal">Kein Panel für die Masse. Sondern echte Gespräche mit Menschen, die auf demselben Niveau bauen, investieren und denken.</p>
+  <div class="grid">
+    <div class="grid-item reveal"><span class="gi-num">01</span><p>Vermögensstrukturierung &amp; Holdingkonzepte für Unternehmer</p></div>
+    <div class="grid-item reveal"><span class="gi-num">02</span><p>Krypto-Steueroptimierung &amp; rechtssichere Dokumentation</p></div>
+    <div class="grid-item reveal"><span class="gi-num">03</span><p>Alternative Anlageklassen &amp; steuerliche Hebel</p></div>
+    <div class="grid-item reveal"><span class="gi-num">04</span><p>Peer-Networking in einem bewusst kleinen, kuratierten Kreis</p></div>
+  </div>
 </section>
 
-<section class="cta-section">
-  <div class="eyebrow reveal" style="margin-bottom:24px;">Letzter Schritt</div>
-  <h2 class="reveal">Die Plätze sind begrenzt. Der Ort bleibt geheim.</h2>
-  <p class="reveal">Bis du eingeladen wirst.</p>
-  <a href="#bewerbung" class="btn reveal">Jetzt bewerben
-    <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h11M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
-  </a>
+<section>
+  <div class="eyebrow reveal" style="margin-bottom:24px;">Privatsphäre als Prinzip</div>
+  <h2 class="reveal">Ein geschützter Rahmen für offene Gespräche.</h2>
+  <p class="reveal">In einem kleinen, geschützten Rahmen bringen wir internationales Steuer-Know-how auf den Punkt und zeigen moderne Lösungen, um dein Portfolio mit innovativen Ansätzen zu ergänzen und zu schützen.</p>
+  <p class="reveal">Zwei unterschiedliche Perspektiven, eine gemeinsame Basis: steuerliche Sicherheit. Aus der Kombination von Krypto und moderner Vermögensstrukturierung entsteht ein Ansatz, der Vermögen nachhaltig schützt und weiterentwickelt.</p>
 </section>
 
-<section id="bewerbung">
+<section id="warteliste">
   <div class="eyebrow reveal" style="margin-bottom:24px;">Bewerbung</div>
-  <h2 class="reveal">Erzähl uns, wer du bist.</h2>
-  <p class="reveal" style="margin-bottom:36px;">Kurz und ehrlich – das reicht für die Vorauswahl.</p>
+  <h2 class="reveal">Die Plätze sind limitiert. Trag dich jetzt ein.</h2>
+  <p class="reveal" style="margin-bottom:36px;">Wer keinen Platz bekommt, landet automatisch auf der Warteliste für kommende Veranstaltungen.</p>
 
   <div id="mlb2-43759632" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-43759632">
     <div class="ml-form-align-center">
@@ -619,7 +386,7 @@
             </div>
             <input type="hidden" name="ml-submit" value="1">
             <div class="ml-form-embedSubmit">
-              <button type="submit" class="primary">BEWERBUNG ABSENDEN</button>
+              <button type="submit" class="primary">EINTRAGEN</button>
               <button disabled="disabled" style="display:none;" type="button" class="loading">
                 <div class="ml-form-embedSubmitLoad"></div>
                 <span class="sr-only">Loading...</span>
@@ -630,8 +397,8 @@
         </div>
         <div class="ml-form-successBody row-success" style="display:none;">
           <div class="ml-form-successContent">
-            <h4>Das hat geklappt.</h4>
-            <p>Deine Bewerbung wird geprüft und wir informieren dich über weitere Schritte.</p>
+            <h4>Du bist auf der Liste.</h4>
+            <p>Wir melden uns persönlich bei dir.</p>
           </div>
         </div>
       </div>
