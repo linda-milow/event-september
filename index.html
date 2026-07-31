@@ -238,6 +238,46 @@
   .press-item:hover{ transform:translateY(-2px); box-shadow:0 14px 26px -14px rgba(0,0,0,0.5); }
   .press-item img{ height:28px; width:auto; max-width:120px; object-fit:contain; }
 
+  .faq{
+    margin-top:48px;
+    border-top:1px solid var(--line);
+  }
+  .faq-item{
+    border-bottom:1px solid var(--line);
+  }
+  .faq-item summary{
+    list-style:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    padding:26px 0;
+    font-family:'Syne', sans-serif;
+    font-size:17px;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary::after{
+    content:'+';
+    flex:0 0 auto;
+    color:var(--accent);
+    font-family:'Inter', sans-serif;
+    font-size:24px;
+    font-weight:300;
+    line-height:1;
+    transition:transform 0.3s ease;
+  }
+  .faq-item[open] summary::after{ transform:rotate(45deg); }
+  .faq-item .faq-answer{
+    padding:0 42px 26px 0;
+  }
+  .faq-item .faq-answer p{
+    max-width:68ch;
+    font-size:15px;
+  }
+
   /* MailerLite form overrides */
   #mlb2-43759632.ml-form-embedContainer{
     box-sizing:border-box;
@@ -591,6 +631,9 @@
   </p>
 </section>
 
+
+
+
 <section id="bewerbung">
   <div class="eyebrow reveal" style="margin-bottom:24px;">Letzter Schritt</div>
   <h2 class="reveal">Bewerbe dich jetzt und nehme Teil an dem modernsten Finanzevent 2026, um dein Vermögen aktiv zu strukturieren.</h2>
@@ -655,6 +698,68 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow reveal" style="margin-bottom:24px;">Häufige Fragen</div>
+  <h2 class="reveal">Alles, was du vor deiner Bewerbung wissen solltest.</h2>
+
+  <div class="faq">
+    <details class="faq-item reveal">
+      <summary>Muss ich bereits Kunde bei euch sein?</summary>
+      <div class="faq-answer">
+        <p>Nein. Entscheidend ist nicht, ob wir bereits zusammenarbeiten, sondern ob der Teilnehmerkreis zu dir und deinen Zielen passt.</p>
+      </div>
+    </details>
+
+    <details class="faq-item reveal">
+      <summary>Kostet die Teilnahme etwas?</summary>
+      <div class="faq-answer">
+        <p>Ja. Nach einem kurzen Kennenlerngespräch erhältst du – sofern du in die Runde passt – einen persönlichen Link zum Ticketkauf.</p>
+      </div>
+    </details>
+
+    <details class="faq-item reveal">
+      <summary>Warum muss ich mich bewerben?</summary>
+      <div class="faq-answer">
+        <p>The Capital Circle ist bewusst auf einen kleinen, handverlesenen Teilnehmerkreis begrenzt. So entsteht ein persönlicher Rahmen mit offenem Austausch auf Augenhöhe.</p>
+      </div>
+    </details>
+
+    <details class="faq-item reveal">
+      <summary>Wie läuft das Kennenlerngespräch ab?</summary>
+      <div class="faq-answer">
+        <p>Wir telefonieren kurz miteinander, klären offene Fragen und prüfen gemeinsam, ob The Capital Circle der richtige Rahmen für dich ist. Passt du in die Runde, erhältst du anschließend den Link zum Ticketkauf.</p>
+      </div>
+    </details>
+
+    <details class="faq-item reveal">
+      <summary>Wann erfahre ich den Veranstaltungsort?</summary>
+      <div class="faq-answer">
+        <p>Nach erfolgreicher Bewerbung und Ticketkauf erhältst du am <strong>26. August</strong> alle weiteren Informationen – inklusive des genauen Veranstaltungsortes im Raum München.</p>
+      </div>
+    </details>
+
+    <details class="faq-item reveal">
+      <summary>Warum bleibt der Veranstaltungsort geheim?</summary>
+      <div class="faq-answer">
+        <p>Wir möchten unseren Gästen maximale Privatsphäre ermöglichen. Deshalb kommunizieren wir den genauen Veranstaltungsort erst nach erfolgreicher Bewerbung und Ticketkauf an alle bestätigten Teilnehmer.</p>
+      </div>
+    </details>
+<details class="faq-item reveal">
+      <summary>Kann ich eine weitere Person empfehlen?</summary>
+      <div class="faq-answer">
+        <p>Ja, sehr gerne. Du kannst uns jederzeit eine Person empfehlen. Passt sie in den Teilnehmerkreis, kann sie sich ebenfalls bewerben und nach persönlicher Freigabe ein Ticket erwerben.</p>
+      </div>
+    </details>
+
+    <details class="faq-item reveal">
+      <summary>Was passiert, wenn ich keinen Platz bekomme?</summary>
+      <div class="faq-answer">
+        <p>Sollte der Teilnehmerkreis bereits vollständig sein oder das Event aktuell nicht optimal zu dir passen, informieren wir dich darüber und berücksichtigen dich auf Wunsch für zukünftige Veranstaltungen.</p>
+      </div>
+    </details>
   </div>
 </section>
 
