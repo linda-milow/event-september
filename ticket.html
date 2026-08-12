@@ -126,11 +126,26 @@
     background:#dfa15f;
   }
 
+  .checkout-note{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:14px;
+    color:var(--ink-dim);
+    font-size:12px;
+    line-height:1.4;
+  }
+
+  .checkout-note svg{
+    width:13px;
+    height:13px;
+    flex:0 0 auto;
+    stroke:var(--ink-dim);
+  }
+
   .speaker-logos{
-    width:min(880px, calc(100vw - 56px));
+    width:100%;
     margin-top:76px;
-    margin-left:50%;
-    transform:translateX(-50%);
     padding-top:44px;
     border-top:1px solid var(--line);
   }
@@ -184,7 +199,7 @@
     .wrap{ padding:80px 20px 64px; }
 
     .speaker-logos{
-      width:calc(100vw - 40px);
+      width:100%;
       margin-top:60px;
     }
 
@@ -217,6 +232,14 @@
     Ticket jetzt sichern
     <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h11M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
   </a>
+
+  <div class="checkout-note">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="5" y="10" width="14" height="10" rx="2" stroke-width="1.6"/>
+      <path d="M8 10V7a4 4 0 0 1 8 0v3" stroke-width="1.6"/>
+    </svg>
+    <span>Sicherer Checkout über Stripe</span>
+  </div>
 
   <div class="speaker-logos">
     <div class="speaker-logos-title">Unsere Speaker sind bekannt aus:</div>
