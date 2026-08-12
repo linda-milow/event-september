@@ -144,8 +144,10 @@
   }
 
   .speaker-logos{
-    width:100%;
+    width:min(880px, calc(100vw - 56px));
     margin-top:76px;
+    margin-left:50%;
+    transform:translateX(-50%);
     padding-top:44px;
     border-top:1px solid var(--line);
   }
@@ -199,7 +201,7 @@
     .wrap{ padding:80px 20px 64px; }
 
     .speaker-logos{
-      width:100%;
+      width:calc(100vw - 40px);
       margin-top:60px;
     }
 
